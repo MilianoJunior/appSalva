@@ -18,7 +18,7 @@ from libs.composite import Composite
 
 Clock.max_iteration = 20
 
-registrar_componentes = ['main.py','composite.py']
+registrar_componentes = ['main.py','composite.py','entrada.py']
 
 
 def abrir():
