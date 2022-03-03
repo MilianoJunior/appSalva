@@ -13,12 +13,12 @@ class Entrada(Screen):
 
     def __call__(self):
         box_central = MDBoxLayout(orientation='vertical')
-        # elementos
-        # perguntas sobre sintomas
+        # elementos de entrada reativo
         entrada = MDTextField(multiline=True,
                               hint_text='Como você está se sentindo?',
                               size_hint=(.9,.5),
                               pos_hint={'center_x':.5,'center_y':.5})
+        entrada.bind(text=self.reescrever)
         resposta = MDLabel(text='Olá, talvez eu possa lhe ajudar',
                            halign= "center",
                            size_hint=(.9,.5),
@@ -29,3 +29,6 @@ class Entrada(Screen):
         box_central.add_widget(resposta)
         self.add_widget(box_central)
         return self
+
+    def reescrever(self, *args):
+        print(args)
